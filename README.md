@@ -3,8 +3,7 @@
 ## Clase 24/08/2024
 
 ### Admin:
-```bash
-                                                                             
+```bash                                                                        
 ┌──(root㉿kali)-[/home/kali]
 └─# cat /etc/passwd                     
 root:x:0:0:root:/root:/usr/bin/zsh
@@ -238,5 +237,26 @@ initrd.img.old  mnt         swapfile
                                                    
 ┌──(root㉿kali)-[/]
 └─# cd bin
+┌──(root㉿kali)-[/bin]
+└─# chmod 747 cat
+                                                   
+┌──(root㉿kali)-[/bin]
+└─# chmod 555 grep 
+                                                   
+┌──(root㉿kali)-[/bin]
+└─# chmod 555 wc  
+                                                   
+┌──(root㉿kali)-[/bin]
+└─# chmod 555 more
+                                                   
+┌──(root㉿kali)-[/bin]
+└─# chmod 555 less
+                                                   
+┌──(root㉿kali)-[/bin]
+└─# chmod 555 nl  
+                                                   
+┌──(root㉿kali)-[/bin]
+└─# which cat
+/usr/bin/cat
 
 ```

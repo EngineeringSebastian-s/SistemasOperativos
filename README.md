@@ -1,8 +1,9 @@
 # SistemasOperativos
 
 ## Clase 24/08/2024
-bash
-```
+
+### Admin:
+```bash
                                                                              
 ┌──(root㉿kali)-[/home/kali]
 └─# cat /etc/passwd                     

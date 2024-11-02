@@ -1677,3 +1677,83 @@ passwd: password updated successfully
 └─# 
 
 ```
+
+### Sebastian
+```bash
+                                                                             ┌──(kali㉿kali)-[~]
+└─$ su - Sebastian
+Password: 
+┌──(Sebastian㉿kali)-[~]
+└─$ pico Nomina
+
+┌──(Sebastian㉿kali)-[~]
+└─$ cat Nomina
+Rufina!Toro!Moreno!860000!Secretaria!Ninguno!860000!Soltera
+Cinforosa!García!Moreno!1700000!Programador!Tecnóloga!1700000!Casada
+Matea!Patiño!Moreno!3000000!Analista!Ingeniera!3000000!Soltera
+Anacarota!Pérez!Rico!1700000!Programador!Tecnóloga!1700000!Soltera
+Bertulia!Pérez!Moreno!860000!Secretaria!Ninguno!860000!Casada
+Rufina!Toro!Gómez!3000000!Analista!Ingeniera!3000000!Casada
+Matea!Pérez!Vélez!3000000!Analista!Ingeniera!3000000!Soltera
+Cipriana!Restrepo!Ranso!1700000!Programador!Tecnóloga!1700000!Casada
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk ' {print $1}' Nomina
+Rufina!Toro!Moreno!860000!Secretaria!Ninguno!860000!Soltera
+Cinforosa!García!Moreno!1700000!Programador!Tecnóloga!1700000!Casada
+Matea!Patiño!Moreno!3000000!Analista!Ingeniera!3000000!Soltera
+Anacarota!Pérez!Rico!1700000!Programador!Tecnóloga!1700000!Soltera
+Bertulia!Pérez!Moreno!860000!Secretaria!Ninguno!860000!Casada
+Rufina!Toro!Gómez!3000000!Analista!Ingeniera!3000000!Casada
+Matea!Pérez!Vélez!3000000!Analista!Ingeniera!3000000!Soltera
+Cipriana!Restrepo!Ranso!1700000!Programador!Tecnóloga!1700000!Casada
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk -F '!' '{print $1}' Nomina                                           
+Rufina
+Cinforosa
+Matea
+Anacarota
+Bertulia
+Rufina
+Matea
+Cipriana
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk -F '!' '{print $0}' Nomina                                           
+Rufina!Toro!Moreno!860000!Secretaria!Ninguno!860000!Soltera
+Cinforosa!García!Moreno!1700000!Programador!Tecnóloga!1700000!Casada
+Matea!Patiño!Moreno!3000000!Analista!Ingeniera!3000000!Soltera
+Anacarota!Pérez!Rico!1700000!Programador!Tecnóloga!1700000!Soltera
+Bertulia!Pérez!Moreno!860000!Secretaria!Ninguno!860000!Casada
+Rufina!Toro!Gómez!3000000!Analista!Ingeniera!3000000!Casada
+Matea!Pérez!Vélez!3000000!Analista!Ingeniera!3000000!Soltera
+Cipriana!Restrepo!Ranso!1700000!Programador!Tecnóloga!1700000!Casada
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk  -F '!'  '$1!~ /Matea/ && $2~ /^P/ {print $0}' Nomina                
+Anacarota!Pérez!Rico!1700000!Programador!Tecnóloga!1700000!Soltera
+Bertulia!Pérez!Moreno!860000!Secretaria!Ninguno!860000!Casada
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk  -F '!'  '$1!~ /Matea/ && $2~ /^P/ {print $0}' Nomina                
+Anacarota!Pérez!Rico!1700000!Programador!Tecnóloga!1700000!Soltera
+Bertulia!Pérez!Moreno!860000!Secretaria!Ninguno!860000!Casada
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk  -F '!'  '$2~ /Toro/ && $6~ /a$/ {print $0}' NOMINA
+awk: fatal: cannot open file `NOMINA' for reading: No such file or directory
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk  -F '!'  '$2~ /Toro/ && $6~ /a$/ {print $0}' Nomina
+Rufina!Toro!Gómez!3000000!Analista!Ingeniera!3000000!Casada
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk  -F '!'  '$2~ /Toro/ && $6~ /a$/ {print $0}' Nomina>Nomina22         
+
+┌──(Sebastian㉿kali)-[~]
+└─$ cat Nomina22
+Rufina!Toro!Gómez!3000000!Analista!Ingeniera!3000000!Casada
+
+```
+

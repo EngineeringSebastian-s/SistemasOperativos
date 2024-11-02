@@ -2123,6 +2123,30 @@ redis:x:128:131::/var/lib/redis:/usr/sbin/nologin
 mosquitto:x:130:133::/var/lib/mosquitto:/usr/sbin/nologin
 inetsim:x:131:134::/var/lib/inetsim:/usr/sbin/nologin
 
+┌──(Sebastian㉿kali)-[~]
+└─$ awk -F ':' '$1~ /^R/ && $3>400 && $3<700 {print $0}' /etc/passwd
+                                                                                                                                                                                             
+┌──(Sebastian㉿kali)-[~]                                                                                                                                                                     
+└─$ awk -F ':' '$1~ /^R/ && $3>=400 && $3<=700 {print $0}' /etc/passwd                                                                                                                       
+                                                                                                                                                                                             
+┌──(Sebastian㉿kali)-[~]                                                                                                                                                                     
+└─$ awk -F ':' '$1~ /^R/ && $3>=400 && $3<=700 {print $0}' /etc/passwd                                                                                                                       
+                                                                                                                                                                                             
+┌──(Sebastian㉿kali)-[~]                                                                                                                                                                     
+└─$ awk -F ':' '$1~ /^r/ && $3>=400 && $3<=700 {print $0}' /etc/passwd                                                                                                                       
+                                                                                                                                                                                             
+┌──(Sebastian㉿kali)-[~]                                                                                                                                                                     
+└─$ awk -F ':' '$1~ /^r/ && $3<=400 {print $0}' /etc/passwd                                                                                                                       
+root:x:0:0:root:/root:/usr/bin/zsh
+rtkit:x:111:115:RealtimeKit,,,:/proc:/usr/sbin/nologin
+redsocks:x:122:128::/var/run/redsocks:/usr/sbin/nologin
+rwhod:x:123:65534::/var/spool/rwho:/usr/sbin/nologin
+redis:x:128:131::/var/lib/redis:/usr/sbin/nologin
+
+┌──(Sebastian㉿kali)-[~]
+└─$ awk -F ':' '$1~ /^r/ && $3<=400 && $5~ /root/ {print $0}' /etc/passwd                                                                                                                    
+root:x:0:0:root:/root:/usr/bin/zsh
+
 
 ```
 

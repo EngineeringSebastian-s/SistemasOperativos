@@ -1,3 +1,5 @@
+# Clase 07/09/2024
+
 ### **Ejercicio de Filtrado y Manipulación de Archivos con `awk` en Linux**
 
 Este ejercicio documenta los pasos realizados en un entorno Linux utilizando el comando `awk` para filtrar y manipular un archivo de texto llamado `nomina`. A través de estos pasos, se ha trabajado con el archivo para extraer información específica, concatenar datos, filtrar filas según diferentes criterios y redirigir los resultados a nuevos archivos.
